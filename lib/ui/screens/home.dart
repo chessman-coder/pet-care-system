@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_care/data/pet_dummy.dart';
+import 'package:pet_care/ui/screens/pet/pet_screen.dart';
 import 'package:pet_care/ui/widgets/header_section.dart';
 import 'package:pet_care/ui/widgets/placeholder_image.dart';
 
@@ -14,7 +15,7 @@ class Home extends StatelessWidget {
         elevation: 0,
         title: Image.asset('assets/PETCARE.png'),
       ),
-      body: const HomeContent(),
+      body: const PetScreen(),
     );
   }
 }
@@ -26,7 +27,7 @@ class HomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,7 +40,7 @@ class HomeContent extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          _careBanner(),
+          _careBanner(context),
           const SizedBox(height: 24),
 
           const HeaderSection(
@@ -47,7 +48,7 @@ class HomeContent extends StatelessWidget {
             title: 'Upcoming Visiting',
           ),
           const SizedBox(height: 12),
-          _upcomingVisitingCard(),
+          _upcomingVisitingCard(context),
           const SizedBox(height: 24),
 
           const HeaderSection(
@@ -62,7 +63,7 @@ class HomeContent extends StatelessWidget {
     );
   }
 
-  Widget _careBanner() {
+  Widget _careBanner(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
@@ -108,7 +109,7 @@ class HomeContent extends StatelessWidget {
     );
   }
 
-  Widget _upcomingVisitingCard() {
+  Widget _upcomingVisitingCard(BuildContext context) {
     final pet = dummyPets.isNotEmpty ? dummyPets[0] : null;
 
     return Container(

@@ -11,7 +11,7 @@ class HeaderSection extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
-    this.iconSize = 22,
+    this.iconSize = 24,
     this.iconColor = Colors.black,
     this.titleStyle,
   });
@@ -30,7 +30,7 @@ class HeaderSection extends StatelessWidget {
           title,
           style: titleStyle ??
               const TextStyle(
-                fontSize: 18,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
